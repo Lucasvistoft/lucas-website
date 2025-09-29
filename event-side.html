@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+   <meta charset="utf-8" />
+   <title>Event Kalender</title>
+   <link rel="stylesheet" href="event-side.css"/>
+
+</head>
+<header>
+    <a href="index.html">
+        <img src="./media/Logo_png.svg" alt="savaya-uluwatu-360-guide-11">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="#om">Om os</a></li>
+            <li><a href="event-side.html">Events</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="savaya-section">
+  <img src="./media/Savaya_image.jpg" alt="Billede 4" class="savaya-img">
+  <div class="savaya-overlay">
+    <h1>Event Kalender</h1>
+  </div>
+</section>
+
+<div class="filters">
+  <select id="monthFilter">
+    <option value="alle">Alle Datoer</option>
+    <option value="september">September</option>
+    <option value="oktober">Oktober</option>
+  </select>
+
+  <select id="typeFilter">
+    <option value="alletyper">Alle Events</option>
+    <option value="special">Special Events</option>
+  </select>
+</div>
+</section>
+<body>
+   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: url('header-billede.jpg') no-repeat center/cover;
+      color: #000;
+    }
+    header h1 { font-size: 2rem; margin: 0; }
+    .filters { display: flex; justify-content: center; gap: 1rem; padding: 1rem; }
+    .filters select { padding: 0.5rem 1rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; }
+    .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 2rem; }
+    .event-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s ease; position: relative; }
+    .event-card:hover { transform: translateY(-5px); }
+    .event-image { height: 180px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 1.5rem; text-transform: uppercase; }
+    .event-info { padding: 1rem; text-align: center; }
+    .event-info h3 { margin: 0.5rem 0; font-size: 1.2rem; }
+    .event-info p { margin: 0; color: #777; }
+    .hidden { display: none !important; }
+
+    /* overlay */
+    .event-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .event-card:hover .event-overlay { opacity: 1; }
+    .event-overlay button {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn-read { background: #333; color: #fff; }
+    .btn-read:hover { background: #555; }
+    .btn-ticket { background: #e63946; color: #fff; }
+    .btn-ticket:hover { background: #c92a37; }
+   </style>
+
+<section class="events">
+  <!-- SEPTEMBER -->
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image1.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Mandag 15 September</p>
+      <h3>Savaya Monday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image2.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Tirsdag 16 September</p>
+      <h3>Savaya Tuesday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image3.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Onsdag 17 September</p>
+      <h3>Savaya Wednesday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image4.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Torsdag 18 September</p>
+      <h3>Savaya Thursday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image5.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Fredag 19 September</p>
+      <h3>Savaya Friday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image6.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Lørdag 20 September</p>
+      <h3>Savaya Saturday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september">
+    <div class="event-image" style="background-image: url(./media/image7.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Søndag 21 September</p>
+      <h3>Savaya Sunday</h3>
+    </div>
+  </div>
+
+  <div class="event-card september special">
+    <div class="event-image" style="background-image: url(./media/image8.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Mandag 22 September</p>
+      <h3>Savaya Special 1</h3>
+    </div>
+  </div>
+
+  <div class="event-card september special">
+    <div class="event-image" style="background-image: url(./media/image9.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Tirsdag 23 September</p>
+      <h3>Savaya Special 2</h3>
+    </div>
+  </div>
+
+  <div class="event-card september special">
+    <div class="event-image" style="background-image: url(./media/image1.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Onsdag 24 September</p>
+      <h3>Savaya Special 3</h3>
+    </div>
+  </div>
+
+  <div class="event-card september special">
+    <div class="event-image" style="background-image: url(./media/image2.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Torsdag 25 September</p>
+      <h3>Savaya Special 4</h3>
+    </div>
+  </div>
+
+  <div class="event-card september special">
+    <div class="event-image" style="background-image: url(./media/image3.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Fredag 26 September</p>
+      <h3>Savaya Special 5</h3>
+    </div>
+  </div>
+
+  <!-- OKTOBER -->
+  <div class="event-card oktober">
+    <div class="event-image" style="background-image: url(./media/image4.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Onsdag 1 Oktober</p>
+      <h3>Savaya Wednesday</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober">
+    <div class="event-image" style="background-image: url(./media/image5.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Torsdag 2 Oktober</p>
+      <h3>Savaya Thursday</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober">
+    <div class="event-image" style="background-image: url(./media/image6.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Fredag 3 Oktober</p>
+      <h3>Savaya Friday</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober">
+    <div class="event-image" style="background-image: url(./media/image7.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Lørdag 4 Oktober</p>
+      <h3>Savaya Saturday</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober">
+    <div class="event-image" style="background-image: url(./media/image8.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Søndag 5 Oktober</p>
+      <h3>Savaya Sunday</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober special">
+    <div class="event-image" style="background-image: url(./media/image9.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Mandag 6 Oktober</p>
+      <h3>Savaya Special 6</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober special">
+    <div class="event-image" style="background-image: url(./media/image1.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Tirsdag 7 Oktober</p>
+      <h3>Savaya Special 7</h3>
+    </div>
+  </div>
+
+  <div class="event-card oktober special">
+    <div class="event-image" style="background-image: url(./media/image2.jpg)">
+      <div class="event-overlay">
+        <button class="btn-read">Læs mere</button>
+        <button class="btn-ticket">Køb billet</button>
+      </div>
+    </div>
+    <div class="event-info">
+      <p>Onsdag 8 Oktober</p>
+      <h3>Savaya Special 8</h3>
+    </div>
+  </div>
+</section>
+<section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const monthFilter = document.getElementById("monthFilter");
+  const typeFilter = document.getElementById("typeFilter");
+  const events = document.querySelectorAll(".event-card");
+
+  function applyFilters() {
+    const month = monthFilter.value;
+    const type = typeFilter.value;
+
+    events.forEach(ev => {
+      const monthMatch = (month === "alle") || ev.classList.contains(month);
+      const typeMatch = (type === "alletyper") || ev.classList.contains(type);
+      ev.classList.toggle('hidden', !(monthMatch && typeMatch));
+    });
+  }
+
+  monthFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
+
+  applyFilters();
+});
+</script>
+
+<section>
+<section class="newsletter">
+  <div class="newsletter-left">
+    <h3>Sign up for our newsletter to receive exclusive offers.</h3>
+    <p class="newsletter-terms">
+      By signing up, I agree to Savaya's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+
+  <div class="newsletter-right">
+    <form action="https://formspree.io/f/xdkweyjk" method="POST" class="newsletter-form">
+      <label for="firstName">FIRST NAME</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">LAST NAME</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="whatsapp">WHATSAPP</label>
+      <div class="whatsapp-wrapper">
+        <input type="text" id="whatsapp" name="whatsapp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
+      </div>
+
+      <label for="email">EMAIL</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+<footer class="savaya-footer">
+  <div class="footer-logo">
+    <img src="./media/Savaya_footer logo.svg" alt="Savaya Bali logo">
+  </div>
+
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="#">Om Os</a></li>
+      <li><a href="event-side.html">Events</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="footer-info">
+    <div class="footer-hours">
+      <p><strong>Open Daily</strong></p>
+      <p>Weekdays (Monday - Thursday): 1:00PM - 10:00PM</p>
+      <p>Friday: 3:00PM - Close</p>
+      <p>Saturday: 3:00PM - Close</p>
+      <p>Sunday: 1:00PM - Close</p>
+    </div>
+    <div class="footer-address">
+      <p>Jl. Belimbing Sari, Banjar Tambiyak, Pecatu,</p>
+      <p>Uluwatu, Kabupaten Badung, Bali 80364, Indonesia</p>
+    </div>
+    <div class="footer-contact">
+      <p>WA +62 811-3099-0900</p>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/lucasvistoft/"><img src="./media/Instagram logo.svg" alt="Instagram"></a>
+    <a href="https://www.facebook.com/lucas.zolezi/?locale=da_DK"><img src="./media/Facebook logo.svg" alt="Facebook"></a>
+    <a href="https://www.tiktok.com/@lukeoffcourse?lang=da"><img src="./media/Tiktok Logo.svg" alt="TikTok"></a>
+    <a href="https://www.youtube.com/@lukeoffcourse"><img src="./media/Youtube_logo.svg" alt="YouTube"></a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; SAVAYA GROUP 2022 - 2025. ALL RIGHTS RESERVED.</p>
+    <p><a href="#">TERMS</a> | <a href="#">PRIVACY</a></p>
+  </div>
+</footer>

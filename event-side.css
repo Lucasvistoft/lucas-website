@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* Gør det muligt at menuen går til ny linje */
+}
+
+header img {
+    width: auto;
+    margin-left: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif
+    transition color 0.3s;
+    font-size:15px;
+    
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menuen stables lodret */
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header {
+        flex-direction: column; /* Logo + menu oven på hinanden */
+        align-items: flex-start;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+body {
+    background-color: grey;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+ul a {
+    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
+    text-decoration: none; /* Fjerner understregningen */
+    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    transition: color 0.5s;
+    text-transform: uppercase; /* Gør teksten store bogstaver */
+    margin-right: 60px;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Tt commons, sans-serif;
+    background-color: white;
+    color: darkslategrey;
+}
+
+body p {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 18px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* SAVAYA SECTION (Event Kalender titel ovenpå billedet med fuld overlay) */
+.savaya-section {
+  position: relative;
+  overflow: hidden;
+  height: 300px; /* justér efter behov */
+}
+
+.savaya-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fylder containeren uden at ændre proportioner */
+  object-position: top;   /* viser toppen af billedet */
+  display: block;
+}
+
+.savaya-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.7); /* hvid overlay med gennemsigtighed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.savaya-overlay h1 {
+  font-size: 42px;
+  font-weight: medium;
+  color: #000;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+
+/* UPCOMING EVENTS TITLE */
+.upcoming-events {
+  width: 100%;
+  padding: 50px 70px 20px;
+  background: #fff;
+}
+.upcoming-events h2 {
+  font-size: 36px;
+  color: darkslategrey;
+  font-weight: bold;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  padding: 0 70px 30px;
+}
+.filter-bar select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* EVENT GRID */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 70px 70px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+/* EVENT IMAGE + OVERLAY */
+.event-image {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.event-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.event-image:hover .event-overlay {
+  opacity: 1;
+}
+.event-overlay button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-read {
+  background: #333;
+  color: #fff;
+}
+.btn-read:hover {
+  background: #555;
+}
+.btn-ticket {
+  background: #e63946;
+  color: #fff;
+}
+.btn-ticket:hover {
+  background: #c92a37;
+}
+
+/* EVENT INFO */
+.event-info {
+  padding: 20px;
+  text-align: center;
+}
+.event-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* HIDE FILTERED EVENTS */
+.hidden {
+  display: none !important;
+}
+
+/* FOOTER */
+.newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 80px;
+  background: linear-gradient(to bottom, #f9f9f7, #dfe9eb);
+  gap: 80px;
+}
+
+.newsletter-left {
+  flex: 1;
+}
+
+.newsletter-left h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e4a45;
+  margin-bottom: 20px;
+}
+
+.newsletter-terms {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.newsletter-terms a {
+  color: #2e4a45;
+  text-decoration: underline;
+}
+
+.newsletter-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newsletter-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-form label {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: #2e4a45;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 14px;
+}
+
+.whatsapp-wrapper {
+  position: relative;
+}
+
+.whatsapp-wrapper input {
+  padding-right: 40px; /* plads til logo */
+}
+
+.whatsapp-wrapper img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+}
+
+.newsletter-form button {
+  margin-top: 20px;
+  padding: 14px;
+  background-color: #3b4b4b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.newsletter-form button:hover {
+  background-color: #2f3c3c;
+}
+
+/* Mobilvenlig layout */
+@media (max-width: 900px) {
+  .newsletter {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .newsletter-right {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+}
+
+.savaya-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  color: #2b3a3b;
+  font-family: Arial, sans-serif;
+}
+
+.savaya-footer .footer-logo img {
+  width: 180px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  font-size: 10px;
+  color: #2b3a3b;
+  font-weight: 500;
+}
+
+.footer-info {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-info p {
+  margin: 4px 0;
+  font-size: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  line-height: 0,5;
+}
+
+.footer-social {
+  margin: 20px 0;
+}
+
+.footer-social a img {
+  width: 24px;
+  margin: 0 10px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social a img:hover {
+  opacity: 0.6;
+}
+
+.footer-bottom p{
+  margin-top: 20px;
+  font-size: 10px;
+  color: #555;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #555;
+  font-size: 10px;
+}
+
+
