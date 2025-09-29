@@ -1,0 +1,635 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* Gør det muligt at menuen går til ny linje */
+}
+
+header img {
+    width: auto;
+    margin-left: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif
+    transition color 0.3s;
+    font-size:15px;
+    
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menuen stables lodret */
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header {
+        flex-direction: column; /* Logo + menu oven på hinanden */
+        align-items: flex-start;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+body {
+    background-color: grey;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+ul a {
+    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
+    text-decoration: none; /* Fjerner understregningen */
+    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    transition: color 0.5s;
+    text-transform: uppercase; /* Gør teksten store bogstaver */
+    margin-right: 60px;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Tt commons, sans-serif;
+    background-color: white;
+    color: darkslategrey;
+}
+
+body p {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 18px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.containers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.container {
+    flex: 0 0 32%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 0px;
+    min-width: 250px;
+    height: 400px;               /* Ens højde */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Wrapper til billede + overlay */
+.image-wrapper {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Image-wrapper Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    flex-direction: column;   /* Knapperne oven på hinanden */
+    justify-content: center;
+    align-items: center;
+    gap: 15px;                /* Afstand mellem knapper */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+/* Knapper */
+.overlay button {
+    padding: 12px 40px;       /* Gør dem aflange */
+    background: darkslategrey;
+    color: white;
+    border: none;
+    border-radius: 0;         /* Gør dem firkantede */
+    cursor: pointer;
+    font-weight: bold;
+    width: 70%;               /* Ens bredde på tværs */
+    max-width: 200px;         /* Ikke for brede */
+    text-transform: uppercase; /* Ekstra “knap-look” */
+    transition: background 0.3s ease;
+}
+
+.overlay button:hover {
+    background: black;
+}
+
+/* Tekst nederst */
+.container p {
+    padding: 40px;
+    font-size: 16px;
+    color: black;
+    background: white;
+    margin: 0;
+    text-align: center;
+}
+
+.hero {
+    width: 100%;
+    height: 800px;        /* Mindre højde – juster som ønsket */
+    overflow: hidden;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Sørger for at videoen dækker hele området */
+    display: block;
+}
+.upcoming-events {
+    width: 100%;
+    padding-left: 70px;
+    padding-top: 50px;     /* Plads omkring teksten */
+    background-color: #ffffff; /* Lys baggrund */
+    text-align: left;       /* Centrer teksten */
+}
+
+.upcoming-events h2 {
+    font-size: 36px;
+    color: darkslategrey;
+    margin: 0;
+    font-weight: bold;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* Pæn afrunding øverst */
+}
+.savaya-section {
+    position: relative;
+    width: 100%;
+    /* height: 100vh;  <-- fjern hvis du ikke vil have fuld skærmhøjde */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;  /* lille afstand i stedet for kæmpe tomrum */
+    padding-top: 0;    /* fjern den store padding */
+}
+
+.savaya-img {
+    display: block;
+    max-width: 100%;        /* Fylder skærmens bredde, men ikke mere end original */
+    height: auto;           /* Bevarer billedets proportioner */
+}
+
+.savaya-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;       /* Centrerer lodret */
+    justify-content: flex-start; /* Venstre side */
+    padding-left: 40px;        
+    box-sizing: border-box;
+}
+
+.savaya-overlay p {
+    width: 33%;
+    max-width: 500px;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .savaya-overlay p {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Ændret fra 1.5fr 1fr, så venstre boks fylder mindre */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.news-side {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;              /* samme som i .news-grid */
+}
+
+.news-main {
+  width: 100%;
+  /* behold billedets højde og bredde som den er */
+}
+
+.news-image img {
+  width: 100%;      /* Fylder hele sin container */
+  height: auto;     /* Bevarer proportioner */
+  display: block;
+  border-radius: 0; /* Ingen afrundede hjørner */
+}
+
+/* Overlay-tekst */
+.image-text {
+  position: absolute;
+  top: 25%;
+  left: 8%;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+/* Tekstkasse */
+.news-box {
+  background: #f2f1eb;
+  padding: 35px; /* Mere luft inde i boksen */
+  border-radius: 0;
+  margin-top: 10px;
+}
+.news-main .news-box {
+  margin-top: 0; /* ingen hul mellem billede og kasse */
+}
+
+.news-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.news-box p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.news-box small {
+  font-size: 15px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Knapper */
+.news-box button,
+.news-text button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+/* Højre side */
+.news-side {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Mere afstand mellem højre bokse */
+}
+
+.news-item {
+  display: flex;
+  align-items: stretch;
+  background: #f2f1eb;
+  border-radius: 0;
+  overflow: hidden;
+  min-height: 150px; /* Gør boksene højere */
+}
+
+.news-item img {
+  width: 40%;   /* Mindre billede = større grå boks */
+  object-fit: cover;
+}
+
+.news-text {
+  width: 50%;   /* Tekst-boksen fylder resten */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.news-text h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.news-text p {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #444;
+  text-align: left;
+}
+
+.news-box p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  text-align: left; /* Mørkere tekst i boksen */
+}
+.carousel {
+  width: 100vw;                   
+  overflow-x: auto;               
+  overflow-y: hidden;             
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  padding-left: 40px; /* luft fra venstre */
+}
+
+.carousel-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 400px;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover-effekt */
+.carousel-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+/* Knappen */
+.carousel-item button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: darkslategrey;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover button {
+  opacity: 1;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 80px;
+  background: linear-gradient(to bottom, #f9f9f7, #dfe9eb);
+  gap: 80px;
+}
+
+.newsletter-left {
+  flex: 1;
+}
+
+.newsletter-left h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e4a45;
+  margin-bottom: 20px;
+}
+
+.newsletter-terms {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.newsletter-terms a {
+  color: #2e4a45;
+  text-decoration: underline;
+}
+
+.newsletter-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newsletter-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-form label {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: #2e4a45;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 14px;
+}
+
+.whatsapp-wrapper {
+  position: relative;
+}
+
+.whatsapp-wrapper input {
+  padding-right: 40px; /* plads til logo */
+}
+
+.whatsapp-wrapper img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+}
+
+.newsletter-form button {
+  margin-top: 20px;
+  padding: 14px;
+  background-color: #3b4b4b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.newsletter-form button:hover {
+  background-color: #2f3c3c;
+}
+
+/* Mobilvenlig layout */
+@media (max-width: 900px) {
+  .newsletter {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .newsletter-right {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+}
+
+.savaya-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  color: #2b3a3b;
+  font-family: Arial, sans-serif;
+}
+
+.savaya-footer .footer-logo img {
+  width: 180px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  font-size: 10px;
+  color: #2b3a3b;
+  font-weight: 500;
+}
+
+.footer-info {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-info p {
+  margin: 4px 0;
+  font-size: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  line-height: 0,5;
+}
+
+.footer-social {
+  margin: 20px 0;
+}
+
+.footer-social a img {
+  width: 24px;
+  margin: 0 10px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social a img:hover {
+  opacity: 0.6;
+}
+
+.footer-bottom p{
+  margin-top: 20px;
+  font-size: 10px;
+  color: #555;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #555;
+  font-size: 10px;
+}
