@@ -1,1 +1,113 @@
 Om_os.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <link rel="stylesheet" href="Om_os.css">
+</head>
+<header>
+    <a href="index.html">
+        <img src="https://raw.githubusercontent.com/Lucasvistoft/lucas-website/885b02925887aa0d6b63a7e44d2af618e2f2bc29/Media/Logo_png.svg" alt="Savaya Bali logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="#om">Om os</a></li>
+            <li><a href="https://lucasvistoft.github.io/lucas-website/event-side.html">Events</a></li>
+            <li><a href="https://lucasvistoft.github.io/lucas-website/Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+  <h1>FAQ</h1>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">WHAT TIME DOES MAIN DJ / TALENT PERFORM? <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>We are open daily at:</p>
+        <p>Weekdays (Monday - Friday): 1:00PM - Close</p>
+        <p>Saturday: 3:00PM - Close</p>
+        <p>Sunday: 1:00PM - Close</p>
+        <p>Multiple DJ's will perform leading up to the main act.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">TICKETING <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>All tickets are available online and at the entrance, subject to availability.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">DJ / TALENT / BOOKING AGENT INQUIRY <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>Please contact our booking department via email: booking@example.com</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">PROHIBITED ITEMS <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>No outside food, drinks, or illegal substances are allowed on the premises.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">LOST & FOUND <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>Lost something? Please contact our reception desk or email lostfound@example.com</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">ACCEPTED FORM OF ID <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>Valid passport, driver’s license, or government-issued photo ID required.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">MINIMUM AGE <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>You must be at least 18 years old to enter.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">WHAT ARE THE HOURS OF OPERATION? <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>We open at 1PM on weekdays, 3PM on Saturdays, and 1PM on Sundays until closing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">UPCOMING EVENTS <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>Check our website or social media for the latest updates on upcoming events.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">DRESS CODE <span class="arrow">⌄</span></div>
+      <div class="faq-answer">
+        <p>Smart casual attire is required. No beachwear or flip-flops allowed.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("active");
+        const answer = q.nextElementSibling;
+        answer.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,1 +1,136 @@
 Om_os.css
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* Gør det muligt at menuen går til ny linje */
+}
+
+header img {
+    width: auto;
+    margin-left: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif
+    transition color 0.3s;
+    font-size:15px;
+    
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menuen stables lodret */
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header {
+        flex-direction: column; /* Logo + menu oven på hinanden */
+        align-items: flex-start;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+body {
+    background-color: grey;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+ul a {
+    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
+    text-decoration: none; /* Fjerner understregningen */
+    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    transition: color 0.5s;
+    text-transform: uppercase; /* Gør teksten store bogstaver */
+    margin-right: 60px;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.faq-item {
+  background: #d3cbbf;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 15px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2d3a3c;
+}
+
+.faq-question:hover {
+  background: #c8bfb3;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: #fff;
+  padding: 0 20px;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* stort nok til indhold */
+  padding: 15px 20px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .arrow {
+  transform: rotate(180deg);
+}
+
