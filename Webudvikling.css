@@ -189,13 +189,13 @@ body p {
 
 .hero {
     width: 100%;
-    height: 800px;        /* Mindre højde – juster som ønsket */
+    height: 700px;        /* Mindre højde – juster som ønsket */
     overflow: hidden;
 }
 
 .hero video {
     width: 100%;
-    height: 800px;
+    height: 700px;
     object-fit: cover;  /* Sørger for at videoen dækker hele området */
     display: block;
 }
