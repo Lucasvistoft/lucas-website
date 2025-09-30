@@ -284,6 +284,7 @@ footer {
   padding: 50px 80px;
   background: linear-gradient(to bottom, #f9f9f7, #dfe9eb);
   gap: 80px;
+  width: 100%;
 }
 
 .newsletter-left {
@@ -392,6 +393,7 @@ footer {
   background: #fff;
   color: #2b3a3b;
   font-family: Arial, sans-serif;
+  width: 100%;
 }
 
 .savaya-footer .footer-logo img {
