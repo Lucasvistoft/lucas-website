@@ -460,27 +460,3 @@ footer {
   font-size: 10px;
 }
 
-/* Newsletter sektion */
-.newsletter {
-  width: 100%;              /* Fyld hele bredden */
-  max-width: 100%;          /* Fjern begrænsning */
-  margin: 0;                /* Ingen indrykning */
-  padding: 50px 80px;       /* Bevar din padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to bottom, #f9f9f7, #dfe9eb);
-  gap: 80px;
-}
-
-/* Footer */
-.savaya-footer {
-  width: 100%;              /* Fyld hele skærmen */
-  max-width: 100%;          /* Ingen begrænsning */
-  margin: 0;                /* Ingen ekstra afstand i siderne */
-  padding: 40px 20px;
-  background: #fff;
-  color: #2b3a3b;
-  font-family: Arial, sans-serif;
-}
-
