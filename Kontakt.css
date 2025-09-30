@@ -92,7 +92,7 @@ ul a {
 .contact-left {
   flex: 0 0 50%;
   position: relative;
-  height: 400px;
+  height: 800px;
 }
 
 .contact-left img {
@@ -136,7 +136,7 @@ ul a {
   justify-content: center;  /* centrer lodret */
   align-items: center;      /* centrer vandret */
   padding: 0 80px;
-  height: 400px;
+  height: 800px;
 }
 
 
