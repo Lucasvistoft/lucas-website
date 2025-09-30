@@ -84,7 +84,7 @@ ul a {
 /* Kontakt side layout */
 .contact-wrapper {
   display: flex;
-  min-height: 100vh; /* fylder hele skærmen */
+  height: 400px; /* fylder hele skærmen */
   flex-wrap: wrap;
 }
 
@@ -92,7 +92,7 @@ ul a {
 .contact-left {
   flex: 0 0 50%;
   position: relative;
-  min-height: 100vh;
+  height: 400px;
 }
 
 .contact-left img {
@@ -136,7 +136,7 @@ ul a {
   justify-content: center;  /* centrer lodret */
   align-items: center;      /* centrer vandret */
   padding: 0 80px;
-  min-height: 100vh;
+  height: 400px;
 }
 
 
