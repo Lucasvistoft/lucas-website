@@ -189,7 +189,7 @@ body p {
 
 .hero {
     width: 100%;
-    height: 500px;        /* Mindre højde – juster som ønsket */
+    height: 100vh;        /* Mindre højde – juster som ønsket */
     overflow: hidden;
 }
 
