@@ -101,7 +101,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;      /* fylder containeren uden at ændre proportioner */
-  object-position: top;   /* viser toppen af billedet */
+  object-position: center;   /* viser toppen af billedet */
   display: block;
 }
 
