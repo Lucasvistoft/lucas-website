@@ -94,7 +94,7 @@ body {
 .savaya-section {
   position: relative;
   overflow: hidden;
-  height: 200px; /* justér efter behov */
+  height: 250px; /* justér efter behov */
 }
 
 .savaya-img {
