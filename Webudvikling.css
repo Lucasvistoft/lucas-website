@@ -122,59 +122,78 @@ body p {
     justify-content: space-between;
 }
 
-/* Wrapper til billede + overlay */
+/* Wrapper til billedkort */
 .image-wrapper {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-    border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
+/* Billedet */
 .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
 }
 
-/* Image-wrapper Overlay */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.6);
-    display: flex;
-    flex-direction: column;   /* Knapperne oven på hinanden */
-    justify-content: center;
+/* Lidt zoom ved hover (valgfrit) */
+.image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Overlay som indeholder knapperne */
+.image-wrapper .overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: flex-end;      /* knapper i bunden */
+  justify-content: center;    /* centreret horisontalt */
+  gap: 12px;
+  padding: 18px;
+  pointer-events: none;       /* undgå at overlay blokerer klik — knapper får pointer-events igen */
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35) 100%);
+}
+
+/* Knapperne */
+.image-wrapper .overlay button {
+  pointer-events: auto;               /* gør knapper klikbare */
+  background: transparent;            /* gennemsigtig baggrund */
+  border: 2px solid rgba(255,255,255,1); /* hvid kant */
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease, color 0.18s ease;
+  backdrop-filter: none;
+}
+
+/* Hover-effekt (let opacitet så knappen stadig føles gennemsigtig) */
+.image-wrapper .overlay button:hover {
+  background-color: rgba(255,255,255,0.12); /* svag hvid baggrund ved hover */
+  transform: translateY(-3px);
+}
+
+/* Fokus (tilgængelighed for keyboard-brugere) */
+.image-wrapper .overlay button:focus {
+  outline: 3px solid rgba(255,255,255,0.18);
+  outline-offset: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* Hvis du vil have knapperne stablet lodret på små skærme */
+@media (max-width: 480px) {
+  .image-wrapper .overlay {
     align-items: center;
-    gap: 15px;                /* Afstand mellem knapper */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-wrapper:hover .overlay {
-    opacity: 1;
-}
-
-/* Knapper */
-.overlay button {
-    padding: 12px 40px;       /* Gør dem aflange */
-    background: darkslategrey;
-    color: white;
-    border: none;
-    border-radius: 0;         /* Gør dem firkantede */
-    cursor: pointer;
-    font-weight: bold;
-    width: 70%;               /* Ens bredde på tværs */
-    max-width: 200px;         /* Ikke for brede */
-    text-transform: uppercase; /* Ekstra “knap-look” */
-    transition: background 0.3s ease;
-}
-
-.overlay button:hover {
-    background: black;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+  }
+  .image-wrapper .overlay button {
+    width: calc(100% - 32px);
+    max-width: 320px;
+  }
 }
 
 /* Tekst nederst */
