@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
-}
-
 
 header {
     position: sticky;
@@ -65,13 +60,6 @@ nav ul li a {
     }
 }
 
-body {
-    background-color: grey;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 ul a {
     color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
     text-decoration: none; /* Fjerner understregningen */
@@ -79,13 +67,15 @@ ul a {
     transition: color 0.5s;
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
-    font-size: normal;
-    font-family: Tt commons, sans-serif;
+    font-size: 15px; /* eller en ønsket px-størrelse */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     margin: 0;
-    font-family: Tt commons, sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
     color: darkslategrey;
 }
@@ -185,22 +175,6 @@ body p {
 .image-wrapper .overlay button:hover {
   background-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
-}
-
-
-.container p {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: rgba(0,0,0,0.4);
-  padding: 10px 20px;
-  border-radius: 4px;
-  letter-spacing: 1px;
 }
 
 
@@ -582,7 +556,7 @@ main img {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
@@ -622,7 +596,7 @@ main img {
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
-  line-height: 0,5;
+  line-height: 0.5;
 }
 
 .footer-social {
