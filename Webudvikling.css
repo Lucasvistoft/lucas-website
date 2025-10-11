@@ -100,14 +100,16 @@ body p {
 
 .containers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrerer kortene i midten */
+    align-items: stretch;
     gap: 20px;
-    padding: 40px 20px;
+    flex-wrap: wrap; /* Gør layoutet responsivt */
+    padding: 40px 0;
     max-width: 1300px;
     margin: 0 auto;
-    flex-wrap: wrap;
     background-color: white;
 }
+
 
 /* ---- NY STYLING inspireret af Joel Corry-banner ---- */
 
@@ -118,6 +120,10 @@ body p {
   height: 500px;
   background-color: #0b1e2d;
   color: white;
+    flex: 1 1 30%;
+  max-width: 420px;
+  min-width: 300px;
+
 }
 
 .image-wrapper {
