@@ -139,30 +139,31 @@ body p {
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.image-wrapper:hover img {
-  transform: scale(1.05);
-  filter: brightness(70%);
-}
-
 .image-wrapper .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(12, 29, 42, 0); /* Usynlig som udgangspunkt */
+  background: rgba(12, 29, 42, 0); /* usynlig som standard */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
   text-align: center;
-  opacity: 0; /* Skjult som standard */
+  opacity: 0; /* skjul alt som standard */
   transition: background 0.3s ease, opacity 0.3s ease;
 }
 
+/* Når man holder musen over billedet */
 .image-wrapper:hover .overlay {
-  background: rgba(12, 29, 42, 0.6); /* Sort baggrund dukker op */
+  background: rgba(12, 29, 42, 0.6); /* vis mørk baggrund */
   opacity: 1;
 }
 
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
 
 .image-wrapper .overlay button {
   background: transparent;
@@ -174,18 +175,18 @@ body p {
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
-    opacity: 0; /* skjul knapperne som standard */
+  opacity: 0; /* skjul knapperne som standard */
+}
 
+.image-wrapper:hover .overlay button {
+  opacity: 1; /* vis knapperne ved hover */
 }
 
 .image-wrapper .overlay button:hover {
   background-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
-  .image-wrapper:hover .overlay button {
-  opacity: 1;
 }
 
-}
 
 .container p {
   position: absolute;
