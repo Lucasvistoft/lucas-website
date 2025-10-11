@@ -213,19 +213,19 @@ main img {
 .savaya-section {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 400px; /* Beholder samme højde */
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;  /* lille afstand i stedet for kæmpe tomrum */
-    padding-top: 0;    /* fjern den store padding */
+    margin-top: 20px;
+    padding-top: 0;
 }
 
-.savaya-img {
-    display: block;
-    max-width: 100%;        /* Fylder skærmens bredde, men ikke mere end original */
-    height: auto;           /* Bevarer billedets proportioner */
+.savaya-section .savaya-img {
+    width: 100%;      /* Fylder hele sidens bredde */
+    height: 400px;    /* Beholder samme højde */
+    object-fit: cover; /* Sikrer at billedet fylder containeren uden at strække */
 }
 
 .savaya-overlay {
