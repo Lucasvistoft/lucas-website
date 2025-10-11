@@ -147,14 +147,22 @@ body p {
 .image-wrapper .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(12, 29, 42, 0.6);
+  background: rgba(12, 29, 42, 0); /* Usynlig som udgangspunkt */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
   text-align: center;
+  opacity: 0; /* Skjult som standard */
+  transition: background 0.3s ease, opacity 0.3s ease;
 }
+
+.image-wrapper:hover .overlay {
+  background: rgba(12, 29, 42, 0.6); /* Sort baggrund dukker op */
+  opacity: 1;
+}
+
 
 .image-wrapper .overlay button {
   background: transparent;
@@ -166,11 +174,17 @@ body p {
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
+    opacity: 0; /* skjul knapperne som standard */
+
 }
 
 .image-wrapper .overlay button:hover {
   background-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
+  .image-wrapper:hover .overlay button {
+  opacity: 1;
+}
+
 }
 
 .container p {
