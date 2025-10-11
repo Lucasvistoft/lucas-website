@@ -213,7 +213,7 @@ main img {
 .savaya-section {
     position: relative;
     width: 100%;
-    height: 400px; /* Beholder samme højde */
+    height: 500px; /* Beholder samme højde */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -224,7 +224,7 @@ main img {
 
 .savaya-section .savaya-img {
     width: 100%;      /* Fylder hele sidens bredde */
-    height: 400px;    /* Beholder samme højde */
+    height: 500px;    /* Beholder samme højde */
     object-fit: cover; /* Sikrer at billedet fylder containeren uden at strække */
 }
 
