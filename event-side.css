@@ -183,7 +183,7 @@ body p {
 /* Event grid */
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* præcis 4 kolonner */
   gap: 25px;
 }
 
