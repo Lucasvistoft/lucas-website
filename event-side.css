@@ -232,6 +232,37 @@ body p {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 }
 
+.event-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover .event-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-buttons .btn {
+  padding: 8px 14px;
+  background-color: #3a3a3a;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  border-radius: 4px;
+}
+
+.event-buttons .btn:hover {
+  background-color: #2f2f2f;
+}
+
+
 .newsletter {
   display: flex;
   justify-content: space-between;
