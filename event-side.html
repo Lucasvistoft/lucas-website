@@ -202,3 +202,31 @@
     <p><a href="#">TERMS</a> | <a href="#">PRIVACY</a></p>
   </div>
 </footer>
+
+<script>
+  const monthFilter = document.getElementById("monthFilter");
+  const typeFilter = document.getElementById("typeFilter");
+  const events = document.querySelectorAll(".event-card");
+
+  function filterEvents() {
+    const month = monthFilter.value;
+    const type = typeFilter.value;
+
+    events.forEach(event => {
+      const matchesMonth = month === "all" || event.dataset.month === month;
+      const matchesType = type === "all" || event.dataset.type === type;
+
+      if (matchesMonth && matchesType) {
+        event.style.display = "block";
+      } else {
+        event.style.display = "none";
+      }
+    });
+  }
+
+  monthFilter.addEventListener("change", filterEvents);
+  typeFilter.addEventListener("change", filterEvents);
+</script>
+
+</body>
+</html>
