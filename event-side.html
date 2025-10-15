@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
 <header>
     <a href="index.html">
         <img src="https://raw.githubusercontent.com/Lucasvistoft/lucas-website/885b02925887aa0d6b63a7e44d2af618e2f2bc29/Media/Logo_png.svg" alt="savaya-uluwatu-360-guide-11">
@@ -41,8 +42,8 @@
     <option value="special">Special Events</option>
   </select>
 </div>
+
 </section>
-<body>
    <style>
     body {
       margin: 0;
@@ -360,33 +361,7 @@
     </div>
   </div>
 </section>
-<section>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const monthFilter = document.getElementById("monthFilter");
-  const typeFilter = document.getElementById("typeFilter");
-  const events = document.querySelectorAll(".event-card");
 
-  function applyFilters() {
-    const month = monthFilter.value;
-    const type = typeFilter.value;
-
-    events.forEach(ev => {
-      const monthMatch = (month === "alle") || ev.classList.contains(month);
-      const typeMatch = (type === "alletyper") || ev.classList.contains(type);
-      ev.classList.toggle('hidden', !(monthMatch && typeMatch));
-    });
-  }
-
-  monthFilter.addEventListener('change', applyFilters);
-  typeFilter.addEventListener('change', applyFilters);
-
-  applyFilters();
-});
-</script>
-</body>
-
-<section>
 <section class="newsletter">
   <div class="newsletter-left">
     <h3>Sign up for our newsletter to receive exclusive offers.</h3>
@@ -416,9 +391,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </form>
   </div>
 </section>
-
-
-
 
 <footer class="savaya-footer">
   <div class="footer-logo">
@@ -463,3 +435,30 @@ document.addEventListener('DOMContentLoaded', function() {
     <p><a href="#">TERMS</a> | <a href="#">PRIVACY</a></p>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const monthFilter = document.getElementById("monthFilter");
+  const typeFilter = document.getElementById("typeFilter");
+  const events = document.querySelectorAll(".event-card");
+
+  function applyFilters() {
+    const month = monthFilter.value;
+    const type = typeFilter.value;
+
+    events.forEach(ev => {
+      const monthMatch = (month === "alle") || ev.classList.contains(month);
+      const typeMatch = (type === "alletyper") || ev.classList.contains(type);
+      ev.classList.toggle('hidden', !(monthMatch && typeMatch));
+    });
+  }
+
+  monthFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
+
+  applyFilters();
+});
+</script>
+
+</body>
+</html>
