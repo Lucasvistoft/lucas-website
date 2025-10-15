@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+}
+
 
 header {
     position: sticky;
@@ -36,14 +41,11 @@ nav ul li a {
     color: darkslategrey;
     font-weight: normal;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
+    transition color 0.3s;
     font-size:15px;
+    
 }
-
-nav ul li a:hover {
-    color: white;
-}
-
 
 /* RESPONSIVE MENU */
 @media (max-width: 768px) {
@@ -64,6 +66,13 @@ nav ul li a:hover {
     }
 }
 
+body {
+    background-color: grey;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
 ul a {
     color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
     text-decoration: none; /* Fjerner understregningen */
@@ -71,15 +80,13 @@ ul a {
     transition: color 0.5s;
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
-    font-size: 15px; /* eller en ønsket px-størrelse */
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
 }
 
 body {
     margin: 0;
-    width: 100%;
-    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Tt commons, sans-serif;
     background-color: white;
     color: darkslategrey;
 }
