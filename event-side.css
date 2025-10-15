@@ -134,8 +134,104 @@ body p {
   padding: 20px 40px;
 }
 
+/* EVENTS SECTION */
+.events-section {
+  padding: 60px 80px;
+  background-color: #fff;
+  color: #222;
+  font-family: 'Tt Commons', sans-serif;
+}
 
-/* FOOTER */
+/* Kontrolbjælke */
+.events-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.dropdowns select {
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dropdowns select:focus {
+  outline: none;
+}
+
+.view-buttons button {
+  background: #ddd;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.view-buttons .active {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+/* Event grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.event-date {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.event-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Hover-effekt */
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+.event-card:hover .event-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
 .newsletter {
   display: flex;
   justify-content: space-between;
@@ -250,7 +346,7 @@ body p {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
@@ -290,7 +386,7 @@ body p {
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
-  line-height: 0,5;
+  line-height: 0.5;
 }
 
 .footer-social {
@@ -318,5 +414,4 @@ body p {
   color: #555;
   font-size: 10px;
 }
-
 
