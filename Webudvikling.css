@@ -201,16 +201,7 @@ main img {
     border-radius: 0; /* Pæn afrunding øverst */
 }
 
-
-
-.upcoming-events h2 {
-  font-size: 32px;
-  color: #1a1a1a;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
+/* ---------- CAROUSEL CONTAINER ---------- */
 .carousel-container {
   width: 95%;
   margin: 60px auto;
@@ -218,189 +209,191 @@ main img {
   position: relative;
 }
 
+/* Track: dupliker kortene inde i HTML for sømløs loop (se forklaring længere nede) */
 .carousel-track {
   display: flex;
-  gap: 25px;
-  animation: scrollLeft 45s linear infinite;
+  gap: 26px;
+  align-items: stretch;
+  /* animation: scrollLeft 28s linear infinite; -- vi aktiverer straks, men kan pausere på hover */
+  animation: scrollLeft 28s linear infinite;
   will-change: transform;
+  /* START-FORSKYDNING: brug negativ delay for at starte midt i animationen og få samme udsnit som dit screenshot */
+  animation-delay: -7s; /* juster tallet for at vælge hvilket kort der vises først */
 }
 
-.events-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
-  margin: 0 auto 20px auto;
-}
-
-.event-card img {
-  transition: transform 0.6s ease, filter 0.4s ease;
-}
-
-
-.view-all {
-  background: transparent;
-  border: 2px solid #00a0ff;
-  color: #00a0ff;
-  padding: 10px 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.view-all:hover {
-  background: #00a0ff;
-  color: white;
-}
-
-.event-card {
-  position: relative;
-  min-width: 340px;
-  height: 460px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-
-.event-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-/* Hover-zoom på billeder */
-.event-card:hover img {
-  transform: scale(1.1);
-}
-
-/* Overlay med lyseblå effekt */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 160, 255, 0.0);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.event-card:hover .overlay {
-  background: rgba(0, 160, 255, 0.55);
-  opacity: 1;
-}
-
-/* Tekst og knapper inde i overlay */
-.overlay h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-
-.overlay p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background-color: #fff;
-  color: #00a0ff;
-  border: none;
-  padding: 10px 22px;
-  margin: 5px 0;
-  border-radius: 6px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00a0ff;
-  color: #fff;
-}
-
-/* === AUTO-SCROLL ANIMATION (højre til venstre) === */
+/* Sæt sømlig loop når du har DUPLIKERET kortene i HTML (dvs. kopier alle event-cards igen) */
 @keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% -> fordi track er duplikeret */
 }
 
-/* Stop scroll når musen er over */
+/* Pause ved hover */
 .carousel-container:hover .carousel-track {
   animation-play-state: paused;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 1024px) {
-  .event-card {
-    min-width: 280px;
-    height: 380px;
-  }
+/* ---------- EVENT CARD ---------- */
+.event-card {
+  position: relative;
+  min-width: 360px;      /* større card som i dit screenshot */
+  height: 460px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
-
-@media (max-width: 768px) {
-  .carousel-track {
-    animation: none;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-
-  .event-card {
-    min-width: 260px;
-    height: 350px;
-  }
-}
-
-@media (max-width: 480px) {
-  .upcoming-events h2 {
-    font-size: 26px;
-  }
-}
-
 
 .event-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, filter 0.4s ease;
 }
 
-/* Hover-effekt */
+/* let zoom på hover */
 .event-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.06);
+  filter: brightness(0.95);
 }
 
-/* Tekst og knapper inde i overlay */
-.overlay h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
+/* ---------- LYSEBLÅ OVERLAY (subtil) ---------- */
+/* Opret indre wrapper for overlay-indhold så baggrund og indhold styres separat */
+.event-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,160,255,0.30); /* lysere og mere transparent */
+  opacity: 0;
+  transition: opacity 0.35s ease, background 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* gør overlay ikke-interaktiv, knapper håndteres via child (.overlay-inner) */
+}
+
+/* Kun vis overlay når hover */
+.event-card:hover .overlay {
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* overlay-inner til at placere klikbare knapper korrekt */
+.event-card .overlay-inner {
+  pointer-events: auto; /* gør knapper klikbare */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* Knappestil (små pill-knapper som i referencen) */
+.overlay-inner .btn {
+  background: #fff;
+  color: #038be8;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+  font-size: 13px;
+}
+
+/* hover på knap */
+.overlay-inner .btn:hover {
+  background: #038be8;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Titel i overlay — synlig men ikke for stor */
+.overlay-inner .overlay-title {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+
+/* ---------- EVENT INFO / DATE BADGE ---------- */
+/* Den grå/hvide nederste tekstboks (som i dit første CSS) */
+.event-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 0px);
+  background: rgba(255,255,255,0.92);
+  padding: 18px 18px 22px 18px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* event-title */
+.event-info .event-title {
+  font-size: 20px;
+  color: #1b1b1b;
+  font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.overlay p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-
-.btn:hover {
-  background-color: #0044ff;
+/* DATE BADGE i bund-venstre, som vertical box */
+.event-info .event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #2f4b4f; /* mørk teal som i reference */
   color: #fff;
+  padding: 10px 12px;
+  min-width: 68px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
+.event-info .event-date .day {
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.event-info .event-date .num {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.event-info .event-date .month {
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .event-card { min-width: 300px; height: 420px; }
+  .carousel-track { gap: 18px; }
+}
+
+@media (max-width: 768px) {
+  .carousel-track { animation: none; overflow-x: auto; scroll-behavior: smooth; }
+  .event-card { min-width: 260px; height: 360px; }
+  .overlay-inner .btn { padding: 8px 14px; font-size: 12px; }
+}
 
 
 .savaya-section {
