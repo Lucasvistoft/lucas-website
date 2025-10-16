@@ -298,6 +298,16 @@
   const calendarView = document.querySelector(".calendar-view");
   const viewButtons = document.querySelectorAll(".view-buttons button");
 
+  // Ugedage
+  const weekdays = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
+
+  // Månedsdata (årstal = 2025 så dagene passer)
+  const months = {
+    oktober: { name: "Oktober", days: 31, index: 9 },
+    november: { name: "November", days: 30, index: 10 }
+  };
+
+  // Filtrering
   function filterEvents() {
     const month = monthFilter.value;
     const type = typeFilter.value;
@@ -309,36 +319,50 @@
       event.style.display = (matchesMonth && matchesType) ? "block" : "none";
     });
 
-    if (calendarView.style.display === "grid") generateCalendar(); // opdatér hvis kalender vises
+    if (calendarView.style.display === "grid") generateCalendar(); // Opdatér hvis i kalender-visning
   }
 
   monthFilter.addEventListener("change", filterEvents);
   typeFilter.addEventListener("change", filterEvents);
 
-  // --- KALENDER LOGIK ---
-  const months = {
-    oktober: { days: 31, index: 9 },
-    november: { days: 30, index: 10 }
-  };
-
+  // Generér kalender
   function generateCalendar() {
-    calendarView.innerHTML = ""; // ryd visning
+    calendarView.innerHTML = ""; // Ryd visning
+
+    // Tilføj ugedage øverst
+    const headerRow = document.createElement("div");
+    headerRow.className = "calendar-header";
+    weekdays.forEach(day => {
+      const cell = document.createElement("div");
+      cell.textContent = day;
+      calendarView.appendChild(cell);
+    });
 
     const selectedMonth = monthFilter.value === "all" ? "oktober" : monthFilter.value;
-    const { days } = months[selectedMonth];
+    const { name, days, index } = months[selectedMonth];
 
-    // lav datoer
+    const year = 2025;
+    const firstDay = new Date(year, index, 1).getDay(); // 0 = søndag
+    const offset = (firstDay + 6) % 7; // gør mandag til første kolonne
+
+    // Tomme felter før månedens start
+    for (let i = 0; i < offset; i++) {
+      const empty = document.createElement("div");
+      empty.className = "calendar-day empty";
+      calendarView.appendChild(empty);
+    }
+
+    // Faktiske datoer
     for (let d = 1; d <= days; d++) {
       const dayDiv = document.createElement("div");
       dayDiv.className = "calendar-day";
-      dayDiv.innerHTML = `<h4>${d} ${selectedMonth.charAt(0).toUpperCase() + selectedMonth.slice(1)}</h4>`;
+      dayDiv.innerHTML = `<h4>${d} ${name}</h4>`;
 
-      // find events til denne dato
+      // Tilføj events for denne dato
       events.forEach(ev => {
-        const evDate = ev.querySelector(".event-date").textContent.split(" ")[0];
+        const evDate = parseInt(ev.querySelector(".event-date").textContent.split(" ")[0]);
         const evMonth = ev.dataset.month;
-
-        if (parseInt(evDate) === d && evMonth === selectedMonth && ev.style.display !== "none") {
+        if (evMonth === selectedMonth && evDate === d && ev.style.display !== "none") {
           const title = ev.querySelector(".event-title").textContent;
           const calendarEvent = document.createElement("div");
           calendarEvent.className = "calendar-event";
@@ -351,7 +375,7 @@
     }
   }
 
-  // --- SKIFT MELLEM GRID OG KALENDER ---
+  // Skift mellem Grid og Kalender
   viewButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       viewButtons.forEach(b => b.classList.remove("active"));
