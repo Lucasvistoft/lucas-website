@@ -211,6 +211,8 @@
 </div>
 </section>
 
+<div class="calendar-view" style="display: none;"></div>
+
 <section class="newsletter">
   <div class="newsletter-left">
     <h3>Sign up for our newsletter to receive exclusive offers.</h3>
@@ -292,6 +294,9 @@
   const monthFilter = document.getElementById("monthFilter");
   const typeFilter = document.getElementById("typeFilter");
   const events = document.querySelectorAll(".event-card");
+  const gridView = document.querySelector(".events-grid");
+  const calendarView = document.querySelector(".calendar-view");
+  const viewButtons = document.querySelectorAll(".view-buttons button");
 
   function filterEvents() {
     const month = monthFilter.value;
@@ -301,16 +306,67 @@
       const matchesMonth = month === "all" || event.dataset.month === month;
       const matchesType = type === "all" || event.dataset.type === type;
 
-      if (matchesMonth && matchesType) {
-        event.style.display = "block";
-      } else {
-        event.style.display = "none";
-      }
+      event.style.display = (matchesMonth && matchesType) ? "block" : "none";
     });
+
+    if (calendarView.style.display === "grid") generateCalendar(); // opdatér hvis kalender vises
   }
 
   monthFilter.addEventListener("change", filterEvents);
   typeFilter.addEventListener("change", filterEvents);
+
+  // --- KALENDER LOGIK ---
+  const months = {
+    oktober: { days: 31, index: 9 },
+    november: { days: 30, index: 10 }
+  };
+
+  function generateCalendar() {
+    calendarView.innerHTML = ""; // ryd visning
+
+    const selectedMonth = monthFilter.value === "all" ? "oktober" : monthFilter.value;
+    const { days } = months[selectedMonth];
+
+    // lav datoer
+    for (let d = 1; d <= days; d++) {
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "calendar-day";
+      dayDiv.innerHTML = `<h4>${d} ${selectedMonth.charAt(0).toUpperCase() + selectedMonth.slice(1)}</h4>`;
+
+      // find events til denne dato
+      events.forEach(ev => {
+        const evDate = ev.querySelector(".event-date").textContent.split(" ")[0];
+        const evMonth = ev.dataset.month;
+
+        if (parseInt(evDate) === d && evMonth === selectedMonth && ev.style.display !== "none") {
+          const title = ev.querySelector(".event-title").textContent;
+          const calendarEvent = document.createElement("div");
+          calendarEvent.className = "calendar-event";
+          calendarEvent.textContent = title;
+          dayDiv.appendChild(calendarEvent);
+        }
+      });
+
+      calendarView.appendChild(dayDiv);
+    }
+  }
+
+  // --- SKIFT MELLEM GRID OG KALENDER ---
+  viewButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      viewButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      if (btn.textContent.includes("Calendar")) {
+        gridView.style.display = "none";
+        calendarView.style.display = "grid";
+        generateCalendar();
+      } else {
+        gridView.style.display = "grid";
+        calendarView.style.display = "none";
+      }
+    });
+  });
 </script>
 
 </body>
