@@ -134,115 +134,212 @@ body p {
   padding: 20px 40px;
 }
 
-
-/* UPCOMING EVENTS TITLE */
-.upcoming-events {
-  width: 100%;
-  padding: 50px 70px 20px;
-  background: #fff;
-}
-.upcoming-events h2 {
-  font-size: 36px;
-  color: darkslategrey;
-  font-weight: bold;
+/* EVENTS SECTION */
+.events-section {
+  padding: 60px 80px;
+  background-color: #fff;
+  color: #222;
+  font-family: 'Tt Commons', sans-serif;
 }
 
-/* FILTER BAR */
-.filter-bar {
+/* Kontrolbjælke */
+.events-controls {
   display: flex;
-  gap: 20px;
-  padding: 0 70px 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
 }
-.filter-bar select {
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+
+.dropdowns select {
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-right: 10px;
+  font-size: 14px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-/* EVENT GRID */
-.event-grid {
+.dropdowns select:focus {
+  outline: none;
+}
+
+.view-buttons button {
+  background: #ddd;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.view-buttons .active {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+/* Event grid */
+.events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 0 70px 70px;
+  grid-template-columns: repeat(4, 1fr); /* præcis 4 kolonner */
+  gap: 25px;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 1200px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner på store tablets / små laptops */
+  }
+}
+
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner på tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid {
+    grid-template-columns: 1fr; /* 1 kolonne på mobil */
+  }
+
+  .event-card {
+    height: auto;
+  }
 }
 
 .event-card {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.event-card:hover {
-  transform: translateY(-5px);
+  cursor: pointer;
 }
 
-/* EVENT IMAGE + OVERLAY */
-.event-image {
-  position: relative;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
+
 .event-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  transition: all 0.3s ease;
 }
-.event-image:hover .event-overlay {
-  opacity: 1;
-}
-.event-overlay button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 0;
+
+.event-date {
+  font-size: 13px;
   font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.event-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Hover-effekt */
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+.event-card:hover .event-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.event-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover .event-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-buttons .btn {
+  padding: 8px 14px;
+  background-color: #3a3a3a;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
   text-transform: uppercase;
-  cursor: pointer;
+  font-weight: 600;
   transition: background 0.3s ease;
-}
-.btn-read {
-  background: #333;
-  color: #fff;
-}
-.btn-read:hover {
-  background: #555;
-}
-.btn-ticket {
-  background: #e63946;
-  color: #fff;
-}
-.btn-ticket:hover {
-  background: #c92a37;
+  border-radius: 4px;
 }
 
-/* EVENT INFO */
-.event-info {
-  padding: 20px;
+.event-buttons .btn:hover {
+  background-color: #2f2f2f;
+}
+
+/* === CALENDAR VIEW === */
+.calendar-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  padding: 30px 0;
+  background-color: #fff;
+}
+
+.calendar-header {
+  display: contents;
+}
+
+.calendar-header div {
   text-align: center;
-}
-.event-info p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 8px;
-}
-
-/* HIDE FILTERED EVENTS */
-.hidden {
-  display: none !important;
+  font-weight: bold;
+  padding: 10px 0;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  color: #333;
 }
 
-/* FOOTER */
+.calendar-day {
+  border: 1px solid #e0e0e0;
+  min-height: 120px;
+  padding: 8px;
+  font-size: 13px;
+  position: relative;
+  background-color: #fafafa;
+  border-radius: 6px;
+}
+
+.calendar-day h4 {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+.calendar-event {
+  background: #333;
+  color: white;
+  padding: 3px 5px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.calendar-event:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+
+
 .newsletter {
   display: flex;
   justify-content: space-between;
@@ -357,7 +454,7 @@ body p {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
@@ -397,7 +494,7 @@ body p {
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
-  line-height: 0,5;
+  line-height: 0.5;
 }
 
 .footer-social {
@@ -425,5 +522,4 @@ body p {
   color: #555;
   font-size: 10px;
 }
-
 
