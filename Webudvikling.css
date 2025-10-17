@@ -126,7 +126,7 @@ body p {
 .image-wrapper {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
   padding: 20px;
   position: relative;
@@ -172,13 +172,15 @@ body p {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;       /* Centrerer vertikalt */
-  justify-content: center;   /* Centrerer horisontalt */
-  gap: 20px;
+  flex-direction: column; /* Ændret fra row til column */
+  align-items: center;    /* Centrerer horisontalt */
+  justify-content: center; /* Centrerer vertikalt */
+  gap: 15px;               /* Lodret afstand mellem knapper */
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 2; /* Sørger for at ligge over det blå lag */
+  z-index: 2; 
 }
+
 
 .image-card:hover .overlay {
   opacity: 1;
