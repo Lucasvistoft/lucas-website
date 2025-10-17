@@ -41,8 +41,8 @@ nav ul li a {
     color: darkslategrey;
     font-weight: normal;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif:
-    transition color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s;
     font-size:15px;
     
 }
@@ -122,79 +122,79 @@ body p {
     justify-content: space-between;
 }
 
-/* Wrapper til billedkort */
+/* === 3 billeder i image-wrapper med overlay og knapper === */
 .image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-/* Billedet */
-.image-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
-
-/* Lidt zoom ved hover (valgfrit) */
-.image-wrapper:hover img {
-  transform: scale(1.03);
-}
-
-/* Overlay som indeholder knapperne */
-.image-wrapper .overlay {
-  position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
   display: flex;
-  align-items: flex-end;      /* knapper i bunden */
-  justify-content: center;    /* centreret horisontalt */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: relative;
+  background-color: white;
+}
+
+.image-card {
+  position: relative;
+  flex: 0 1 calc(33.333% - 20px); /* tre billeder pr. række */
+  min-width: 280px;
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay + knapper */
+.image-card .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   gap: 12px;
   padding: 18px;
-  pointer-events: none;       /* undgå at overlay blokerer klik — knapper får pointer-events igen */
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
 }
 
-/* Knapperne */
-.image-wrapper .overlay button {
-  pointer-events: auto;               /* gør knapper klikbare */
-  background: transparent;            /* gennemsigtig baggrund */
-  border: 2px solid rgba(255,255,255,1); /* hvid kant */
-  color: #ffffff;
+.image-card .overlay button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
   padding: 10px 16px;
   border-radius: 6px;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.18s ease, transform 0.12s ease, color 0.18s ease;
-  backdrop-filter: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-/* Hover-effekt (let opacitet så knappen stadig føles gennemsigtig) */
-.image-wrapper .overlay button:hover {
-  background-color: rgba(255,255,255,0.12); /* svag hvid baggrund ved hover */
+.image-card .overlay button:hover {
+  background-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
 }
 
-/* Fokus (tilgængelighed for keyboard-brugere) */
-.image-wrapper .overlay button:focus {
-  outline: 3px solid rgba(255,255,255,0.18);
-  outline-offset: 2px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+/* Responsivt layout */
+@media (max-width: 768px) {
+  .image-card {
+    flex: 1 1 100%;
+    height: 260px;
+  }
+
+  .image-wrapper {
+    gap: 15px;
+    padding: 10px;
+  }
 }
 
-/* Hvis du vil have knapperne stablet lodret på små skærme */
-@media (max-width: 480px) {
-  .image-wrapper .overlay {
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px;
-  }
-  .image-wrapper .overlay button {
-    width: calc(100% - 32px);
-    max-width: 320px;
-  }
-}
 
 /* Tekst nederst */
 .container p {
