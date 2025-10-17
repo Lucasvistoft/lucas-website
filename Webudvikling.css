@@ -135,7 +135,7 @@ body p {
 
 .image-card {
   position: relative;
-  flex: 0 1 calc(33.333% - 20px); /* tre billeder pr. række */
+  flex: 0 1 calc(33.333% - 20px);
   min-width: 280px;
   height: 360px;
   border-radius: 10px;
@@ -154,31 +154,50 @@ body p {
   transform: scale(1.05);
 }
 
+.image-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(173, 216, 230, 0.4); /* Lyseblå med gennemsigtighed */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover::after {
+  opacity: 1;
+}
+
 /* Overlay + knapper */
 .image-card .overlay {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 12px;
-  padding: 18px;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
+  align-items: center;       /* Centrerer vertikalt */
+  justify-content: center;   /* Centrerer horisontalt */
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2; /* Sørger for at ligge over det blå lag */
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
 }
 
 .image-card .overlay button {
   background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  font-weight: 600;
-  padding: 10px 16px;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .image-card .overlay button:hover {
-  background-color: rgba(255,255,255,0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
 }
 
