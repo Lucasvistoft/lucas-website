@@ -192,7 +192,8 @@ body p {
   color: white;
   font-weight: bold;
   font-family: 'Tt commons', sans-serif;
-  padding: 14px 36px;
+  padding: 16px 60px; /* mere højde og bredde */
+  min-width: 240px;  /* fast minimumsbredde */
   border-radius: 0;
   cursor: pointer;
   text-transform: uppercase;
@@ -200,6 +201,7 @@ body p {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   backdrop-filter: blur(2px);
+  text-align: center;
 }
 
 .image-card .overlay button:hover {
