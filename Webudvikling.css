@@ -209,6 +209,30 @@ body p {
   transform: translateY(-3px);
 }
 
+/* --- Grå boks under image wrapper --- */
+.image-info {
+  background-color: #f2f2f2;     /* lys grå */
+  height: 20px;                  /* ønsket højde */
+  width: 100%;                   /* følger billedets bredde */
+  display: flex;
+  align-items: center;           /* centrerer teksten lodret */
+  justify-content: space-between;/* dato til venstre, artist til højre */
+  padding: 0 12px;               /* lidt luft i siderne */
+  font-family: 'Tt commons', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.image-info .date {
+  text-transform: uppercase;
+}
+
+.image-info .artist {
+  text-transform: uppercase;
+}
+
 
 /* Responsivt layout */
 @media (max-width: 768px) {
