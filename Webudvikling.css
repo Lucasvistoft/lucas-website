@@ -188,11 +188,11 @@ body p {
 /* --- Ens knapdesign som BUY TICKETS / BOOK VIP TABLE --- */
 .image-card .overlay button {
   background: rgba(255, 255, 255, 0.15);
-  border: 2px solid white;
+  border: 1px solid white;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
   font-family: 'Tt commons', sans-serif;
-  padding: 16px 60px; /* mere højde og bredde */
+  padding: 12px 80px; /* mere højde og bredde */
   min-width: 240px;  /* fast minimumsbredde */
   border-radius: 0;
   cursor: pointer;
