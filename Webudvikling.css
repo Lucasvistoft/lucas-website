@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
-}
-
 
 header {
     position: sticky;
@@ -41,11 +36,14 @@ nav ul li a {
     color: darkslategrey;
     font-weight: normal;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif
-    transition color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
     font-size:15px;
-    
 }
+
+nav ul li a:hover {
+    color: white;
+}
+
 
 /* RESPONSIVE MENU */
 @media (max-width: 768px) {
@@ -66,13 +64,6 @@ nav ul li a {
     }
 }
 
-body {
-    background-color: grey;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 ul a {
     color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
     text-decoration: none; /* Fjerner understregningen */
@@ -80,13 +71,15 @@ ul a {
     transition: color 0.5s;
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
-    font-size: normal;
-    font-family: Tt commons, sans-serif;
+    font-size: 15px; /* eller en ønsket px-størrelse */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     margin: 0;
-    font-family: Tt commons, sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
     color: darkslategrey;
 }
@@ -101,110 +94,93 @@ body p {
 
 .containers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrerer kortene i midten */
+    align-items: stretch;
     gap: 20px;
-    padding: 40px 20px;
+    flex-wrap: wrap; /* Gør layoutet responsivt */
+    padding: 40px 0;
     max-width: 1300px;
     margin: 0 auto;
-    flex-wrap: wrap;
     background-color: white;
 }
+
+
+/* ---- NY STYLING inspireret af Joel Corry-banner ---- */
 
 .container {
-    flex: 0 0 32%;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-radius: 0px;
-    min-width: 250px;
-    height: 400px;               /* Ens højde */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Wrapper til billedkort */
-.image-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0;
+  height: 500px;
+  background-color: #0b1e2d;
+  color: white;
+    flex: 1 1 30%;
+  max-width: 420px;
+  min-width: 300px;
+
 }
 
-/* Billedet */
+.image-wrapper {
+  position: relative;
+  height: 100%;
+}
+
 .image-wrapper img {
-  display: block;
   width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-/* Lidt zoom ved hover (valgfrit) */
-.image-wrapper:hover img {
-  transform: scale(1.03);
-}
-
-/* Overlay som indeholder knapperne */
 .image-wrapper .overlay {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
+  background: rgba(12, 29, 42, 0); /* usynlig som standard */
   display: flex;
-  align-items: flex-end;      /* knapper i bunden */
-  justify-content: center;    /* centreret horisontalt */
-  gap: 12px;
-  padding: 18px;
-  pointer-events: none;       /* undgå at overlay blokerer klik — knapper får pointer-events igen */
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35) 100%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  opacity: 0; /* skjul alt som standard */
+  transition: background 0.3s ease, opacity 0.3s ease;
 }
 
-/* Knapperne */
+/* Når man holder musen over billedet */
+.image-wrapper:hover .overlay {
+  background: rgba(12, 29, 42, 0.6); /* vis mørk baggrund */
+  opacity: 1;
+}
+
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
 .image-wrapper .overlay button {
-  pointer-events: auto;               /* gør knapper klikbare */
-  background: transparent;            /* gennemsigtig baggrund */
-  border: 2px solid rgba(255,255,255,1); /* hvid kant */
-  color: #ffffff;
-  padding: 10px 16px;
-  border-radius: 6px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
   font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background-color 0.18s ease, transform 0.12s ease, color 0.18s ease;
-  backdrop-filter: none;
+  transition: all 0.3s ease;
+  opacity: 0; /* skjul knapperne som standard */
 }
 
-/* Hover-effekt (let opacitet så knappen stadig føles gennemsigtig) */
+.image-wrapper:hover .overlay button {
+  opacity: 1; /* vis knapperne ved hover */
+}
+
 .image-wrapper .overlay button:hover {
-  background-color: rgba(255,255,255,0.12); /* svag hvid baggrund ved hover */
+  background-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
 }
 
-/* Fokus (tilgængelighed for keyboard-brugere) */
-.image-wrapper .overlay button:focus {
-  outline: 3px solid rgba(255,255,255,0.18);
-  outline-offset: 2px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-}
-
-/* Hvis du vil have knapperne stablet lodret på små skærme */
-@media (max-width: 480px) {
-  .image-wrapper .overlay {
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px;
-  }
-  .image-wrapper .overlay button {
-    width: calc(100% - 32px);
-    max-width: 320px;
-  }
-}
-
-/* Tekst nederst */
-.container p {
-    padding: 40px;
-    font-size: 16px;
-    color: black;
-    background: white;
-    margin: 0;
-    text-align: center;
-}
 
 .hero {
     width: 100%;
@@ -241,19 +217,19 @@ main img {
 .savaya-section {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px; /* Beholder samme højde */
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;  /* lille afstand i stedet for kæmpe tomrum */
-    padding-top: 0;    /* fjern den store padding */
+    margin-top: 20px;
+    padding-top: 0;
 }
 
-.savaya-img {
-    display: block;
-    max-width: 100%;        /* Fylder skærmens bredde, men ikke mere end original */
-    height: auto;           /* Bevarer billedets proportioner */
+.savaya-section .savaya-img {
+    width: 100%;      /* Fylder hele sidens bredde */
+    height: 500px;    /* Beholder samme højde */
+    object-fit: cover; /* Sikrer at billedet fylder containeren uden at strække */
 }
 
 .savaya-overlay {
@@ -584,7 +560,7 @@ main img {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
@@ -624,7 +600,7 @@ main img {
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
-  line-height: 0,5;
+  line-height: 0.5;
 }
 
 .footer-social {
