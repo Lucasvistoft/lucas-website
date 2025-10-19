@@ -133,14 +133,12 @@ body p {
   background-color: white;
 }
 
-.image-card {
-  position: relative;
-  flex: 0 1 calc(33.333% - 20px);
-  min-width: 320px;  /* lidt bredere */
-  height: 420px;     /* lidt højere */
-  border-radius: 0;  /* fjernet afrunding */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 .image-card img {
