@@ -7,11 +7,9 @@
 body {
     width: 100%;
     overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
-    color: white;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    font-family: Tt commons, sans-serif;
     background-color: white;
     color: darkslategrey;
 }
@@ -40,6 +38,7 @@ header {
 }
 
 header img {
+    height: 40px;
     width: auto;
     margin-left: 40px;
 }
@@ -90,7 +89,7 @@ ul a {
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
     font-size: normal;
-    font-family: Tt commons, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .containers {
@@ -184,7 +183,7 @@ ul a {
   border: 1px solid white;
   color: white;
   font-weight: normal;
-  font-family: 'Tt commons', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 12px 80px;
   min-width: 240px;
   border-radius: 0;
@@ -217,6 +216,16 @@ ul a {
     gap: 15px;
     padding: 10px;
   }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+   .carousel-item {
+    width: 250px;
+    height: 220px;
+  }
+
 }
 
 
@@ -608,7 +617,7 @@ main img {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
