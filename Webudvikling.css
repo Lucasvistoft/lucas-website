@@ -133,17 +133,19 @@ body p {
   background-color: white;
 }
 
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
+.image-card {
+  position: relative;
+  flex: 0 1 calc(33.333% - 20px);
+  min-width: 320px;  /* lidt bredere */
+  height: 420px;     /* lidt højere */
+  border-radius: 0;  /* fjernet afrunding */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
 .image-card img {
   width: 100%;
-  height: calc(100% - 20px); /* Gør plads til den grå boks */
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
@@ -207,18 +209,6 @@ body p {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-3px);
 }
-
-/* Sørger for at links omkring knapperne ikke ændrer designet */
-.image-card .overlay a {
-  text-decoration: none;  /* Fjern understregning */
-}
-
-.image-card .overlay a button {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-}
-
 
 
 /* Responsivt layout */
