@@ -82,6 +82,17 @@ nav ul li a {
     }
 }
 
+ul a {
+    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
+    text-decoration: none; /* Fjerner understregningen */
+    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    transition: color 0.5s;
+    text-transform: uppercase; /* Gør teksten store bogstaver */
+    margin-right: 60px;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
+}
+
 .containers {
     display: flex;
     justify-content: space-between;
@@ -108,21 +119,20 @@ nav ul li a {
 /* === 3 billeder i image-wrapper med overlay og knapper === */
 
 .image-card {
-   display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 20px;
-  position: relative;
-  background-color: white;
   position: relative;
   flex: 0 1 calc(33.333% - 20px);
-  min-width: 320px;  /* lidt bredere */
-  height: 420px;     /* lidt højere */
-  border-radius: 0;  /* fjernet afrunding */
+  min-width: 320px;
+  height: 420px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* ← fjern padding */
+  background-color: transparent; /* ← fjern hvid baggrund */
 }
+
 
 .image-card img {
   width: 100%;
