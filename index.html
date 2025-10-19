@@ -162,52 +162,6 @@
   </div>
 </section>
 
-<!-- Læs beskrivelser knap -->
-<button id="toggleReadMedia" aria-label="Læs beskrivelser af billeder og videoer" 
-        style="position: fixed; bottom: 20px; right: 20px; 
-               background: white; border: none; cursor: pointer; 
-               border-radius: 50%; width: 60px; height: 60px; 
-               box-shadow: 0px 4px 6px rgba(0,0,0,0.2);">
-    🔊
-</button>
-
-<script>
-const synth = window.speechSynthesis;
-let isReading = false; // status om oplæsning kører
-
-document.getElementById("toggleReadMedia").addEventListener("click", function() {
-    if (!isReading) {
-        // Start oplæsning
-        isReading = true;
-        this.innerText = "🔇"; // ændrer ikon til lyd fra
-        const mediaTexts = [];
-
-        // Saml alt-tekster fra billeder
-        document.querySelectorAll('img').forEach(img => {
-            if(img.alt) mediaTexts.push("Billede: " + img.alt);
-        });
-
-        // Saml aria-label fra videoer
-        document.querySelectorAll('video').forEach(video => {
-            if(video.getAttribute('aria-label')) 
-                mediaTexts.push("Video: " + video.getAttribute('aria-label'));
-        });
-
-        // Læs alle beskrivelser
-        mediaTexts.forEach(text => {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = "da-DK";
-            synth.speak(utterance);
-        });
-
-    } else {
-        // Stop oplæsning
-        synth.cancel();
-        isReading = false;
-        this.innerText = "🔊"; // ændrer ikon tilbage til lyd på
-    }
-});
-</script>
 <section class="newsletter">
   <div class="newsletter-left">
     <h3>Sign up for our newsletter to receive exclusive offers.</h3>
