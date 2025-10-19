@@ -210,6 +210,18 @@ body p {
   transform: translateY(-3px);
 }
 
+/* Sørger for at links omkring knapperne ikke ændrer designet */
+.image-card .overlay a {
+  text-decoration: none;  /* Fjern understregning */
+}
+
+.image-card .overlay a button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+
 
 /* Responsivt layout */
 @media (max-width: 768px) {
