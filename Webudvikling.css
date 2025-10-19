@@ -7,7 +7,24 @@
 body {
     width: 100%;
     overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+    background-color: grey;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: Tt commons, sans-serif;
+    background-color: white;
+    color: darkslategrey;
 }
+
+body p {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 18px;
+    margin-top: 40px;
+    text-align: center;
+}
+
 
 
 header {
@@ -66,13 +83,6 @@ nav ul li a {
     }
 }
 
-body {
-    background-color: grey;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 ul a {
     color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
     text-decoration: none; /* Fjerner understregningen */
@@ -82,21 +92,6 @@ ul a {
     margin-right: 60px;
     font-size: normal;
     font-family: Tt commons, sans-serif;
-}
-
-body {
-    margin: 0;
-    font-family: Tt commons, sans-serif;
-    background-color: white;
-    color: darkslategrey;
-}
-
-body p {
-    max-width: 1200px;
-    margin: 20px auto;
-    font-size: 18px;
-    margin-top: 40px;
-    text-align: center;
 }
 
 .containers {
@@ -123,17 +118,15 @@ body p {
 }
 
 /* === 3 billeder i image-wrapper med overlay og knapper === */
+
 .image-card {
-  display: flex;
+   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
   padding: 20px;
   position: relative;
   background-color: white;
-}
-
-.image-card {
   position: relative;
   flex: 0 1 calc(33.333% - 20px);
   min-width: 320px;  /* lidt bredere */
