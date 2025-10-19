@@ -7,7 +7,6 @@
 body {
     width: 100%;
     overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
-    background-color: grey;
     color: white;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -81,17 +80,6 @@ nav ul li a {
     nav ul li a {
         font-size: 18px;
     }
-}
-
-ul a {
-    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
-    text-decoration: none; /* Fjerner understregningen */
-    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
-    transition: color 0.5s;
-    text-transform: uppercase; /* Gør teksten store bogstaver */
-    margin-right: 60px;
-    font-size: normal;
-    font-family: Tt commons, sans-serif;
 }
 
 .containers {
@@ -650,7 +638,7 @@ main img {
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
-  line-height: 0,5;
+  line-height: 0.5;
 }
 
 .footer-social {
