@@ -19,7 +19,7 @@ Events-siden fungerer som hjertet af hjemmesiden og samler alle kommende arrange
 
 Hver event præsenteres med flotte billeder, dato, kunstnernavn og en kort beskrivelse, samt knapper til at læse mere eller købe billet direkte. Siden er opbygget med fokus på brugervenlighed og et stilrent design, hvor oplevelsen og stemningen er i centrum.
 
-![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Events%20skaermbilledet.png?raw=true>)
+https://github.com/Lucasvistoft/lucas-website/blob/main/Events%20skaermbilledet.png?raw=true
 
 
 
