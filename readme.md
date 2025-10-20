@@ -2,7 +2,7 @@ Forside
 
 Forsiden byder besøgende velkommen med en stemningsfuld og luksuriøs præsentation af stedet – en kombination af video, billeder og animationer, der fanger atmosfæren fra første øjeblik. Her introduceres stedets unikke univers, hvor musik, æstetik og omgivelser smelter sammen til en eksklusiv oplevelse. Forsiden fremhæver aktuelle highlights og giver et hurtigt indblik i de kommende events, så gæster straks får lyst til at udforske mere.
 
-https://github.com/Lucasvistoft/lucas-website/blob/main/Forside%20skaermbilledet.png?raw=true
+![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Forside%20skaermbilledet.png?raw=true>)
 
 
 Om os / FAQ
@@ -10,7 +10,7 @@ Om os / FAQ
 Om os-siden fortæller historien bag stedet – et eksklusivt mødested, hvor musik, natur og arkitektur går op i en højere enhed. Her kan man lære mere om visionen, konceptet og den oplevelse, stedet ønsker at skabe.
 I FAQ-delen findes svar på de mest stillede spørgsmål om alt fra adgang og dresscode til reservationer, transport og praktiske forhold. Sproget er imødekommende og informativt, så gæster let kan finde de oplysninger, de skal bruge for at planlægge deres besøg.
 
-https://github.com/Lucasvistoft/lucas-website/blob/main/Om%20os%20skaermbilledet.png?raw=true
+![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Om%20os%20skaermbilledet.png?raw=true>)
 
 
 Events
@@ -19,7 +19,7 @@ Events-siden fungerer som hjertet af hjemmesiden og samler alle kommende arrange
 
 Hver event præsenteres med flotte billeder, dato, kunstnernavn og en kort beskrivelse, samt knapper til at læse mere eller købe billet direkte. Siden er opbygget med fokus på brugervenlighed og et stilrent design, hvor oplevelsen og stemningen er i centrum.
 
-https://github.com/Lucasvistoft/lucas-website/blob/main/Events%20skaermbilledet.png?raw=true
+![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Events%20skaermbilledet.png?raw=true>)
 
 
 
@@ -28,7 +28,7 @@ Kontakt
 Kontaktsiden giver besøgende mulighed for nemt at komme i direkte forbindelse med stedet. Her findes en kontaktformular, der er koblet op via Formspree.io, så alle henvendelser automatisk sendes videre til din e-mailindbakke.
 Designet følger resten af sidens æstetik – enkelt, elegant og funktionelt – så det er hurtigt og nemt for gæster at sende spørgsmål, forespørgsler eller samarbejdstilbud.
 
-https://github.com/Lucasvistoft/lucas-website/blob/main/Kontakt%20os%20skaermbilledet.png?raw=true
+![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Kontakt%20os%20skaermbilledet.png?raw=true>)
 
 
 Målgruppe
