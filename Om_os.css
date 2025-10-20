@@ -86,7 +86,7 @@ ul a {
 .savaya-section {
   position: relative;
   overflow: hidden;
-  height: 250px; /* justér efter behov */
+  height: 300px; /* justér efter behov */
 }
 
 .savaya-img {
@@ -148,7 +148,7 @@ ul a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
-  background: #f9f9f9;
+  background: #f1f1f1;
   padding: 0 20px;
 }
 
