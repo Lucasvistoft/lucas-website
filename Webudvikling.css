@@ -227,7 +227,7 @@ ul a {
 
 .hero {
     width: 100%;
-    height: 70vh;        /* Mindre højde – juster som ønsket */
+    height: 700px;        /* Mindre højde – juster som ønsket */
     overflow: hidden;
 }
 
