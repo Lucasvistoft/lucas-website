@@ -496,6 +496,7 @@ main img {
   padding: 50px 80px;
   background: linear-gradient(to bottom, #f9f9f7, #dfe9eb);
   gap: 80px;
+  width: 100%;
 }
 
 .newsletter-left {
