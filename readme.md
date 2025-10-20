@@ -1,40 +1,59 @@
-Forside
+README – Savaya Hjemmeside
 
-Forsiden byder besøgende velkommen med en stemningsfuld og luksuriøs præsentation af stedet – en kombination af video, billeder og animationer, der fanger atmosfæren fra første øjeblik. Her introduceres stedets unikke univers, hvor musik, æstetik og omgivelser smelter sammen til en eksklusiv oplevelse. Forsiden fremhæver aktuelle highlights og giver et hurtigt indblik i de kommende events, så gæster straks får lyst til at udforske mere.
+Denne hjemmeside er skabt ud fra en eksklusiv beach club på Bali, hvor musik, æstetik og omgivelser går op i en højere enhed. Formålet har været at skabe et digitalt univers, der giver de besøgende samme følelse af luksus og atmosfære, som man oplever på stedet i virkeligheden.
 
 ![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Forside%20skaermbilledet.png?raw=true>)
 
+Analyse og målgruppe
 
-Om os / FAQ
-
-Om os-siden fortæller historien bag stedet – et eksklusivt mødested, hvor musik, natur og arkitektur går op i en højere enhed. Her kan man lære mere om visionen, konceptet og den oplevelse, stedet ønsker at skabe.
-I FAQ-delen findes svar på de mest stillede spørgsmål om alt fra adgang og dresscode til reservationer, transport og praktiske forhold. Sproget er imødekommende og informativt, så gæster let kan finde de oplysninger, de skal bruge for at planlægge deres besøg.
-
-![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Om%20os%20skaermbilledet.png?raw=true>)
-
-
-Events
-
-Events-siden fungerer som hjertet af hjemmesiden og samler alle kommende arrangementer i en overskuelig eventkalender. Her kan besøgende nemt få et overblik over, hvad der sker de næste måneder, og vælge at filtrere events efter september, oktober eller se de særlige Special Events, der byder på unikke oplevelser og eksklusive gæsteoptrædener.
-
-Hver event præsenteres med flotte billeder, dato, kunstnernavn og en kort beskrivelse, samt knapper til at læse mere eller købe billet direkte. Siden er opbygget med fokus på brugervenlighed og et stilrent design, hvor oplevelsen og stemningen er i centrum.
+Hjemmesiden henvender sig til et moderne og internationalt publikum, typisk unge voksne mellem 23 og 40 år, som interesserer sig for musik, design, livsstil og unikke oplevelser. Det er mennesker, der værdsætter kvalitet og æstetik, og som ofte deler deres oplevelser på sociale medier.
 
 ![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Events%20skaermbilledet.png?raw=true>)
 
+Når en bruger besøger siden, kan det være for at se kommende events, finde praktisk information eller komme i kontakt med stedet. Derfor var det vigtigt, at siden føles intuitiv, overskuelig og inspirerende fra første klik. De vigtigste funktioner er derfor en eventkalender, et FAQ-afsnit og en nem kontaktformular, så brugeren hurtigt kan finde det, de søger.
 
+![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Om%20os%20skaermbilledet.png?raw=true>)
 
-Kontakt
+Design og struktur
 
-Kontaktsiden giver besøgende mulighed for nemt at komme i direkte forbindelse med stedet. Her findes en kontaktformular, der er koblet op via Formspree.io, så alle henvendelser automatisk sendes videre til din e-mailindbakke.
-Designet følger resten af sidens æstetik – enkelt, elegant og funktionelt – så det er hurtigt og nemt for gæster at sende spørgsmål, forespørgsler eller samarbejdstilbud.
+Designet er inspireret af luksuriøse klubuniverser og naturens æstetik. Det er bygget op omkring store billeder, video og bløde animationer, som tilsammen formidler stemningen og brandets eksklusive udtryk.
 
 ![alt text](<https://github.com/Lucasvistoft/lucas-website/blob/main/Kontakt%20os%20skaermbilledet.png?raw=true>)
 
+Strukturen er enkel og brugervenlig med fire hovedsider: Forside, Om os / FAQ, Events og Kontakt.
 
-Målgruppe
+Forsiden byder brugeren velkommen og viser udvalgte highlights og kommende events. På Om os-siden fortælles historien og visionen bag stedet, mens Events-siden fungerer som hjertet af hjemmesiden, hvor alle kommende arrangementer præsenteres med billeder, beskrivelser og billetlinks. Kontakt-siden runder oplevelsen af med en elegant og funktionel kontaktformular, som gør det nemt at sende en besked direkte til stedet.
 
-Siden henvender sig til et moderne og internationalt publikum, der søger eksklusive oplevelser med fokus på musik, livsstil og stemning. Målgruppen består af personer, der værdsætter kvalitet, æstetik og atmosfære – og som ser events som mere end bare en fest, men som en helhedsoplevelse.
+Der er lagt vægt på et sammenhængende design med rene linjer, mørke farvetoner, sans for detaljer og en tydelig balance mellem tekst og visuel kommunikation.
 
-De typiske besøgende er unge voksne og voksne i alderen 23–40 år, ofte bosat i større byer og med interesse for musik, mode, design, rejser og gastronomi. Mange er rejselystne og vant til at besøge internationale destinationer og events, hvor stil, visuel identitet og oplevelse er i centrum.
+Udviklingsproces og test
 
-Siden appellerer både til lokale gæster, der søger noget særligt i weekenden, og til internationale besøgende, der rejser for at opleve unikke steder med en særlig vibe. Publikum prioriterer stemning, kvalitet og sociale øjeblikke – og deler ofte deres oplevelser på sociale medier, hvor stedet fungerer som et symbol på livsstil, eksklusivitet og frihed.
+Arbejdet begyndte med en visuel prototype lavet i Canva, hvor jeg samlede idéer og designinspiration fra forskellige hjemmesider, jeg godt kunne lide online. Formålet var at finde den rette stemning og stil, inden jeg begyndte at bygge selve hjemmesiden.
+
+Efter at have sammensat udtrykket i Canva, blev projektet kodet i HTML, CSS og JavaScript med fokus på et responsivt og flydende design, der fungerer godt både på computer og mobil.
+
+Under udviklingen testede jeg løbende siden i forskellige browsere (Chrome, og Safari) for at sikre stabilitet og ensartet visning. Kontaktformularen blev testet gennem Formspree.io, så jeg kunne bekræfte, at beskeder blev sendt korrekt til e-mail. Den færdige version af siden blev derefter hostet via GitHub Pages.
+
+Hjælpemidler:
+
+Canva – brugt til at designe prototypen og fastlægge den visuelle stil
+
+HTML5 / CSS3 / JavaScript – anvendt til kodning og udvikling af selve hjemmesiden
+
+Formspree.io – til håndtering af kontaktformular og e-mailfunktion
+
+GitHub Pages – brugt til hosting og offentliggørelse af hjemmesiden
+
+ChatGPT - ide udvikling og forståelse indenfor jacascript og css
+
+Udfordringer og ekstra funktioner
+
+En af de største udfordringer var at skabe en hjemmeside, der føles visuelt rig og eksklusiv, men som samtidig indlæses hurtigt. For at løse det optimerede jeg billederne og brugte lette animationer, som bevarer stemningen uden at belaste ydeevnen.
+
+Derudover tilføjede jeg en funktion, hvor brugeren kan filtrere events efter måned eller kategori, så det er nemmere at få et overblik over arrangementerne. Det var en ekstra feature, som ikke oprindeligt var planlagt, men som forbedrede oplevelsen markant.
+
+Det vigtigste har dog været at skabe en helhedsoplevelse – en hjemmeside, der føles som en forlængelse af stedet selv, og som giver den besøgende lyst til at udforske videre.
+
+Konklusion
+
+Projektet har været en spændende og lærerig proces, hvor jeg har arbejdet med både design, funktionalitet og brugeroplevelse. Ved at kombinere kreativ inspiration fra Canva med teknisk udvikling i HTML, CSS og JavaScript har jeg skabt en hjemmeside, der både informerer, inspirerer og formidler den eksklusive stemning, stedet repræsenterer.
