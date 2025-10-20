@@ -282,9 +282,8 @@ ul a {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
-  padding: 30px 0;
   background-color: #fff;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
