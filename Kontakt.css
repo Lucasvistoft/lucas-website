@@ -8,7 +8,7 @@
 body {
   width: 100%;
   overflow-x: hidden;
-  font-family: "Tt commons", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #fff;
   color: #445150;
 }
@@ -46,7 +46,7 @@ nav ul li a {
     font-weight: normal;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    transition color: 0.3s;
+    transition: color 0.3s;
     font-size:15px;
     
 }
@@ -77,14 +77,13 @@ ul a {
     transition: color 0.5s;
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
-    font-size: normal;
-    font-family: Tt commons, sans-serif;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Kontakt side layout */
 .contact-wrapper {
   display: flex;
-  height: 400px; /* fylder hele skærmen */
   flex-wrap: wrap;
 }
 
@@ -392,7 +391,7 @@ footer {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
 }
 
