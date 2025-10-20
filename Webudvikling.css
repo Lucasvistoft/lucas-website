@@ -672,3 +672,126 @@ main img {
   color: #555;
   font-size: 10px;
 }
+
+/* === EKSTRA MOBILOPTIMERING === */
+
+/* 1️⃣ Hero video – lavere højde på mobil */
+@media (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+}
+
+/* 2️⃣ "Upcoming Events" – centrér tekst og reducer padding */
+@media (max-width: 768px) {
+  .upcoming-events {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .upcoming-events h2 {
+    font-size: 28px;
+  }
+}
+
+/* 3️⃣ Cards-sektion (billederne med knapper) */
+@media (max-width: 768px) {
+  .containers {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .image-card {
+    width: 100%;
+    max-width: 400px;
+    height: 280px;
+  }
+
+  .image-card .overlay .btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+}
+
+/* 4️⃣ Savaya-sektion – billede + tekst */
+@media (max-width: 768px) {
+  .savaya-section {
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .savaya-overlay {
+    position: static;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 20px;
+  }
+
+  .savaya-overlay p {
+    width: 100%;
+    font-size: 16px;
+    color: #2c3e50;
+  }
+}
+
+/* 5️⃣ News grid */
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-item img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .news-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .news-box button,
+  .news-text button {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* 6️⃣ Carousel – justér størrelse på billeder */
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 280px;
+    height: 200px;
+  }
+}
+
+/* 7️⃣ Footer – stak elementer pænt */
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    width: 140px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
+
