@@ -8,7 +8,6 @@
 </head>
 
 
-
 <body>
 <header>
     <a href="index.html">
@@ -85,34 +84,8 @@
 <!-- Bekræftelse besked -->
 <p id="form-status" style="margin-top:20px; font-size:14px; color:#445150;"></p>
 
-<script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        status.textContent = "Tak for din besked! Vi vender tilbage snarest.";
-        form.reset();
-      } else {
-        status.textContent = "Der skete en fejl. Prøv venligst igen.";
-      }
-    } catch (error) {
-      status.textContent = "Netværksfejl – prøv igen senere.";
-    }
-  });
-</script>
-
 </div>
+</section>
 
 <!-- Map sektion -->
 <section class="map-section">
@@ -125,20 +98,7 @@
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
-
-  <!-- Læs beskrivelser knap -->
-  <button id="toggleReadMedia" aria-label="Læs beskrivelser af billeder og videoer" 
-          aria-pressed="false"
-          style="position: fixed; bottom: 20px; right: 20px; 
-                 background: white; border: none; cursor: pointer; 
-                 border-radius: 50%; width: 60px; height: 60px; 
-                 box-shadow: 0px 4px 6px rgba(0,0,0,0.2);">
-      🔊
-  </button>
-
-  <!-- Live region for status -->
-  <div id="readStatus" aria-live="polite" style="position:absolute; left:-9999px;"></div>
-</section> <!-- <-- LUKKER map-sektionen korrekt -->
+</section>
 
 <section class="newsletter">
   <div class="newsletter-left">
@@ -162,15 +122,13 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
       </div>
 
-      <label for="email">EMAIL</label>
-      <input type="email" id="email" name="email" required>
+      <label for="newsletter-email">EMAIL</label>
+      <input type="email" id="newsletter-email" name="email" required>
 
       <button type="submit">SUBSCRIBE</button>
     </form>
   </div>
 </section>
-
-
 
 
 <footer class="savaya-footer">
@@ -216,3 +174,32 @@
     <p><a href="">TERMS</a> | <a href="">PRIVACY</a></p>
   </div>
 </footer>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = "Tak for din besked! Vi vender tilbage snarest.";
+        form.reset();
+      } else {
+        status.textContent = "Der skete en fejl. Prøv venligst igen.";
+      }
+    } catch (error) {
+      status.textContent = "Netværksfejl – prøv igen senere.";
+    }
+  });
+</script>
+</body>
+</html>
