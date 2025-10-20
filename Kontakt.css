@@ -46,7 +46,7 @@ nav ul li a {
     font-weight: normal;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    transition: color 0.3s;
+    transition color: 0.3s;
     font-size:15px;
     
 }
@@ -81,7 +81,14 @@ ul a {
     font-family: Tt commons, sans-serif;
 }
 
+/* Kontakt side layout */
+.contact-wrapper {
+  display: flex;
+  height: 400px; /* fylder hele skærmen */
+  flex-wrap: wrap;
+}
 
+/* Venstre side */
 .contact-left {
   flex: 0 0 50%;
   position: relative;
