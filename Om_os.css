@@ -5,10 +5,13 @@
 }
 
 body {
+    margin: 0;
     width: 100%;
-    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    color: #333;
 }
-
 
 header {
     position: sticky;
@@ -24,6 +27,7 @@ header {
 }
 
 header img {
+    height: 25px;
     width: auto;
     margin-left: 40px;
 }
@@ -39,13 +43,13 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: darkslategrey;
-    font-weight: normal;
+    font-weight: 500;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif
-    transition color 0.3s;
-    font-size:15px;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s;
+    font-size: 15px;
 }
+
 
 /* RESPONSIVE MENU */
 @media (max-width: 768px) {
@@ -66,30 +70,18 @@ nav ul li a {
     }
 }
 
-body {
-    background-color: grey;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
 ul a {
     color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
     text-decoration: none; /* Fjerner understregningen */
-    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    font-weight: 500;     /* Bevarer fed skrift, hvis du vil */
     transition: color 0.5s;
     text-transform: uppercase; /* Gør teksten store bogstaver */
     margin-right: 60px;
-    font-size: normal;
-    font-family: Tt commons, sans-serif;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
-}
 
 .savaya-section {
   position: relative;
@@ -119,7 +111,7 @@ body {
 
 .savaya-overlay h1 {
   font-size: 42px;
-  font-weight: medium;
+  font-weight: 500;
   color: #000;
   text-align: center;
   padding: 20px 40px;
@@ -140,7 +132,7 @@ body {
 
 .faq-question {
   padding: 15px 20px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -156,13 +148,14 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
-  background: #fff;
+  background: #f9f9f9;
   padding: 0 20px;
 }
 
 .faq-answer.open {
   max-height: 500px; /* stort nok til indhold */
   padding: 15px 20px;
+  transition: all 0.4s ease;
 }
 
 .arrow {
@@ -254,7 +247,7 @@ body {
   padding: 14px;
   background-color: #3b4b4b;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   letter-spacing: 1px;
@@ -287,7 +280,7 @@ body {
   padding: 40px 20px;
   background: #fff;
   color: #2b3a3b;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .savaya-footer .footer-logo img {
@@ -326,8 +319,8 @@ body {
   margin: 4px 0;
   font-size: 12px;
   margin-top: 20px;
-  font-weight: bold;
-  line-height: 0,5;
+  font-weight: 500;
+  line-height: 0.5;
 }
 
 .footer-social {
